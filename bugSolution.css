@@ -1,0 +1,25 @@
+To fix this, ensure the parent element has a defined width. You can set a fixed width, or use `width: 100%;` or a similar approach to ensure the parent element has a size for `calc()` to work with correctly.  For example:
+
+/* Incorrect: Parent element's width is not explicitly defined */
+div {
+  /* missing width declaration */
+}
+.element {
+  width: calc(100% - 20px);
+}
+
+/* Correct: Parent element has an explicitly defined width */
+div {
+  width: 500px;
+}
+.element {
+  width: calc(100% - 20px);
+}
+
+/* Correct: Using viewport width */
+div {
+  width: 100vw;
+}
+.element {
+  width: calc(100% - 20px);
+}
